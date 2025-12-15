@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Configurar opcions
         const keys = Object.keys(situation.opcions);
-        option1Btn.textContent = keys[0];
-        option2Btn.textContent = keys[1];
+        option1Btn.textContent = situation.opcions[keys[0]].title;
+        option2Btn.textContent = situation.opcions[keys[1]].title;
 
         option1Btn.onclick = () => chooseOption(keys[0]);
         option2Btn.onclick = () => chooseOption(keys[1]);

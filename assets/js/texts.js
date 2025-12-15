@@ -3,8 +3,8 @@ const situacions = {
     narrador: "Benvingut/da! El teu objectiu és guanyar seguidors i ingressos publicant missatges que agradin al públic. Però compte! Si publiques missatges que ofenguin massa gent, podries ser cancel·lat/da i perdre-ho tot. Fes clic a les opcions de sota per publicar el teu primer missatge.",
     impacte: { seguidors: 0, opinio: 0 },
     opcions: {
-      suau: { next: "2A", text: "No tot és esquerra o dreta. A vegades és només cansament col·lectiu.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "2B", text: "El sistema està fallant i ningú fa res.", impacte: { seguidors: 5000, opinio: -3 } }
+      suau: { title:"Publicació suau", next: "2A", text: "No tot és esquerra o dreta. A vegades és només cansament col·lectiu.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: {title:"Publicació crítica", next: "2B", text: "El sistema està fallant i ningú fa res.", impacte: { seguidors: 5000, opinio: -3 } }
     }
   },
 
@@ -12,8 +12,8 @@ const situacions = {
     narrador: "La gent et veu amable. No fas soroll, no tens risc.",
     impacte: { seguidors: 3000, opinio: 3 },
     opcions: {
-      suau: { next: "3A", text: "Intento veure els matisos abans de jutjar.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "3B", text: "Algunes decisions del govern no tenen sentit.", impacte: { seguidors: 10000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "3A", text: "Intento veure els matisos abans de jutjar.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "3B", text: "Algunes decisions del govern no tenen sentit.", impacte: { seguidors: 10000, opinio: -5 } }
     }
   },
 
@@ -21,8 +21,8 @@ const situacions = {
     narrador: "La teva opinió ha cridat l’atenció.",
     impacte: { seguidors: 12000, opinio: -3 },
     opcions: {
-      suau: { next: "3A", text: "Potser exagero, però crec que cal reflexionar.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "3C", text: "Els responsables han de ser sancionats.", impacte: { seguidors: 15000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "3A", text: "Potser exagero, però crec que cal reflexionar.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "3C", text: "Els responsables han de ser sancionats.", impacte: { seguidors: 15000, opinio: -5 } }
     }
   },
 
@@ -30,8 +30,8 @@ const situacions = {
     narrador: "Ets un perfil tranquil.",
     impacte: { seguidors: 2000, opinio: 2 },
     opcions: {
-      suau: { next: "4A", text: "Respecto totes les opinions, fins i tot les que no comparteixo.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "4B", text: "No puc callar davant d’aquestes injustícies.", impacte: { seguidors: 10000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "4A", text: "Respecto totes les opinions, fins i tot les que no comparteixo.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "4B", text: "No puc callar davant d’aquestes injustícies.", impacte: { seguidors: 10000, opinio: -5 } }
     }
   },
 
@@ -39,8 +39,8 @@ const situacions = {
     narrador: "Has tastat la sensació de tenir detractors.",
     impacte: { seguidors: 10000, opinio: -2 },
     opcions: {
-      suau: { next: "4A", text: "Intento explicar les coses amb calma, encara que algú no estigui d’acord.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "4C", text: "Aquesta situació és intolerable i cal denunciar-la.", impacte: { seguidors: 12000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "4A", text: "Intento explicar les coses amb calma, encara que algú no estigui d’acord.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "4C", text: "Aquesta situació és intolerable i cal denunciar-la.", impacte: { seguidors: 12000, opinio: -5 } }
     }
   },
 
@@ -48,8 +48,8 @@ const situacions = {
     narrador: "Ja tens un petit públic que espera el drama.",
     impacte: { seguidors: 20000, opinio: -5 },
     opcions: {
-      critic: { next: "4B", text: "La veritat és que estem sent enganyats.", impacte: { seguidors: 15000, opinio: -5 } },
-      polemic: { next: "4D", text: "No em silenciaran! La injustícia és evident.", impacte: { seguidors: 30000, opinio: -8 } }
+      critic: { title:"Publicació crítica", next: "4B", text: "La veritat és que estem sent enganyats.", impacte: { seguidors: 15000, opinio: -5 } },
+      polemic: { title:"Publicació polèmica", next: "4D", text: "No em silenciaran! La injustícia és evident.", impacte: { seguidors: 30000, opinio: -8 } }
     }
   },
 
@@ -58,8 +58,8 @@ const situacions = {
     narrador: "Continues sent considerat una persona raonable.",
     impacte: { seguidors: 4000, opinio: 2 },
     opcions: {
-      suau: { next: "5A", text: "Crec que el diàleg és més útil que el conflicte.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "5B", text: "Cal millorar moltes coses en el nostre sistema.", impacte: { seguidors: 12000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "5A", text: "Crec que el diàleg és més útil que el conflicte.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "5B", text: "Cal millorar moltes coses en el nostre sistema.", impacte: { seguidors: 12000, opinio: -5 } }
     }
   },
 
@@ -67,8 +67,8 @@ const situacions = {
     narrador: "Comença a sonar el teu nom.",
     impacte: { seguidors: 10000, opinio: -2 },
     opcions: {
-      suau: { next: "5A", text: "Segueixo escoltant totes les veus abans de parlar.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "5C", text: "No puc ignorar aquestes irregularitats.", impacte: { seguidors: 15000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "5A", text: "Segueixo escoltant totes les veus abans de parlar.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "5C", text: "No puc ignorar aquestes irregularitats.", impacte: { seguidors: 15000, opinio: -5 } }
     }
   },
 
@@ -76,8 +76,8 @@ const situacions = {
     narrador: "La teva comunitat està dividida.",
     impacte: { seguidors: 12000, opinio: -5 },
     opcions: {
-      critic: { next: "5B", text: "Alguns responsables han de rendir comptes.", impacte: { seguidors: 12000, opinio: -5 } },
-      polemic: { next: "5C", text: "No em quedo callat davant l’abús.", impacte: { seguidors: 25000, opinio: -8 } }
+      critic: { title:"Publicació crítica", next: "5B", text: "Alguns responsables han de rendir comptes.", impacte: { seguidors: 12000, opinio: -5 } },
+      polemic: { title:"Publicació polèmica", next: "5C", text: "No em quedo callat davant l’abús.", impacte: { seguidors: 25000, opinio: -8 } }
     }
   },
 
@@ -85,8 +85,8 @@ const situacions = {
     narrador: "El teu nom comença a ser Trending Topic.",
     impacte: { seguidors: 25000, opinio: -8 },
     opcions: {
-      critic: { next: "5C", text: "Els errors són evidents, cal canviar les coses.", impacte: { seguidors: 15000, opinio: -5 } },
-      polemic: { next: "5D", text: "Ja n’hi ha prou! La injustícia no es pot ignorar.", impacte: { seguidors: 50000, opinio: -10 } }
+      critic: { title:"Publicació crítica", next: "5C", text: "Els errors són evidents, cal canviar les coses.", impacte: { seguidors: 15000, opinio: -5 } },
+      polemic: { title:"Publicació polèmica", next: "5D", text: "Ja n’hi ha prou! La injustícia no es pot ignorar.", impacte: { seguidors: 50000, opinio: -10 } }
     }
   },
 
@@ -95,8 +95,8 @@ const situacions = {
     narrador: "Poc risc. Bona imatge.",
     impacte: { seguidors: 4000, opinio: 2 },
     opcions: {
-      suau: { next: "6A", text: "Continuo compartint reflexions sense atacar ningú.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "6B", text: "Alguns temes cal criticar-los o es perpetuaran.", impacte: { seguidors: 12000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "6A", text: "Continuo compartint reflexions sense atacar ningú.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "6B", text: "Alguns temes cal criticar-los o es perpetuaran.", impacte: { seguidors: 12000, opinio: -5 } }
     }
   },
 
@@ -104,8 +104,8 @@ const situacions = {
     narrador: "Tens seguidors de tot tipus.",
     impacte: { seguidors: 8000, opinio: 0 },
     opcions: {
-      suau: { next: "6A", text: "Escoltar abans de parlar m’ajuda a ser just.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "6C", text: "Aquestes situacions no es poden tolerar.", impacte: { seguidors: 12000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "6A", text: "Escoltar abans de parlar m’ajuda a ser just.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "6C", text: "Aquestes situacions no es poden tolerar.", impacte: { seguidors: 12000, opinio: -5 } }
     }
   },
 
@@ -113,8 +113,8 @@ const situacions = {
     narrador: "La gent comença a evitar defensar-te públicament.",
     impacte: { seguidors: 20000, opinio: -8 },
     opcions: {
-      critic: { next: "6B", text: "Seguiré denunciant errors, tot i les crítiques.", impacte: { seguidors: 12000, opinio: -5 } },
-      polemic: { next: "6D", text: "Ja no tinc por de molestar ningú.", impacte: { seguidors: 50000, opinio: -10 } }
+      critic: { title:"Publicació crítica", next: "6B", text: "Seguiré denunciant errors, tot i les crítiques.", impacte: { seguidors: 12000, opinio: -5 } },
+      polemic: { title:"Publicació polèmica", next: "6D", text: "Ja no tinc por de molestar ningú.", impacte: { seguidors: 50000, opinio: -10 } }
     }
   },
 
@@ -122,8 +122,8 @@ const situacions = {
     narrador: "Ja tens un públic polaritzat.",
     impacte: { seguidors: 50000, opinio: -10 },
     opcions: {
-      critic: { next: "6D", text: "Els meus seguidors saben la veritat.", impacte: { seguidors: 12000, opinio: -5 } },
-      polemic: { next: "6E", text: "Els que callen, són còmplices.", impacte: { seguidors: 100000, opinio: -10 } }
+      critic: { title:"Publicació crítica", next: "6D", text: "Els meus seguidors saben la veritat.", impacte: { seguidors: 12000, opinio: -5 } },
+      polemic: { title:"Publicació polèmica", next: "6E", text: "Els que callen, són còmplices.", impacte: { seguidors: 100000, opinio: -10 } }
     }
   },
 
@@ -132,8 +132,8 @@ const situacions = {
     narrador: "Riures, comentaris normals. Tot tranquil.",
     impacte: { seguidors: 4000, opinio: 2 },
     opcions: {
-      suau: { next: "7A", text: "Segueixo compartint petites reflexions.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "7B", text: "De vegades cal ser crític per avançar.", impacte: { seguidors: 12000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "7A", text: "Segueixo compartint petites reflexions.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "7B", text: "De vegades cal ser crític per avançar.", impacte: { seguidors: 12000, opinio: -5 } }
     }
   },
 
@@ -141,8 +141,8 @@ const situacions = {
     narrador: "Ets difícil de classificar.",
     impacte: { seguidors: 8000, opinio: 0 },
     opcions: {
-      suau: { next: "7A", text: "Intento mantenir l’equilibri entre tothom.", impacte: { seguidors: 2000, opinio: 2 } },
-      critic: { next: "7C", text: "Alguns errors no es poden ignorar.", impacte: { seguidors: 12000, opinio: -5 } }
+      suau: { title:"Publicació suau", next: "7A", text: "Intento mantenir l’equilibri entre tothom.", impacte: { seguidors: 2000, opinio: 2 } },
+      critic: { title:"Publicació crítica", next: "7C", text: "Alguns errors no es poden ignorar.", impacte: { seguidors: 12000, opinio: -5 } }
     }
   },
 
@@ -150,8 +150,8 @@ const situacions = {
     narrador: "L’espiral del silenci ja és clara.",
     impacte: { seguidors: 20000, opinio: -5 },
     opcions: {
-      critic: { next: "7C", text: "Els silencis són massa evidents.", impacte: { seguidors: 12000, opinio: -5 } },
-      polemic: { next: "7D", text: "Ja n’hi ha prou de silencis còmplices.", impacte: { seguidors: 50000, opinio: -10 } }
+      critic: { title:"Publicació crítica", next: "7C", text: "Els silencis són massa evidents.", impacte: { seguidors: 12000, opinio: -5 } },
+      polemic: { title:"Publicació polèmica", next: "7D", text: "Ja n’hi ha prou de silencis còmplices.", impacte: { seguidors: 50000, opinio: -10 } }
     }
   },
 
@@ -159,8 +159,8 @@ const situacions = {
     narrador: "Els teus tweets circulen descontextualitzats.",
     impacte: { seguidors: 50000, opinio: -8 },
     opcions: {
-      critic: { next: "7C", text: "Els mitjans distorsionen la realitat.", impacte: { seguidors: 12000, opinio: -5 } },
-      polemic: { next: "7E", text: "No importa, jo sé la veritat.", impacte: { seguidors: 100000, opinio: -10 } }
+      critic: { title:"Publicació crítica", next: "7C", text: "Els mitjans distorsionen la realitat.", impacte: { seguidors: 12000, opinio: -5 } },
+      polemic: { title:"Publicació polèmica", next: "7E", text: "No importa, jo sé la veritat.", impacte: { seguidors: 100000, opinio: -10 } }
     }
   },
 
@@ -168,8 +168,8 @@ const situacions = {
     narrador: "Ets un compte polèmic reconegut.",
     impacte: { seguidors: 100000, opinio: -10 },
     opcions: {
-      polemic: { next: "7E", text: "Els mitjans no poden silenciar la veritat.", impacte: { seguidors: 100000, opinio: -10 } },
-      devastador: { next: "7F", text: "Un sol tweet ho pot canviar tot.", impacte: { seguidors: 1000000, opinio: -20 } }
+      polemic: { title:"Publicació polèmica", next: "7E", text: "Els mitjans no poden silenciar la veritat.", impacte: { seguidors: 100000, opinio: -10 } },
+      devastador: { title:"Publicació devastadora", next: "7F", text: "Un sol tweet ho pot canviar tot.", impacte: { seguidors: 1000000, opinio: -20 } }
     }
   },
 
@@ -184,8 +184,8 @@ const situacions = {
     narrador: "Un sol tweet pot fer-ho explotar tot.",
     impacte: { seguidors: 5000000, opinio: -20 },
     opcions: {
-      polemic: { final: "FINAL4", impacte: { seguidors: 1000000, opinio: -10 } },
-      devastador: { final: "FINAL5", impacte: { seguidors: 5000000, opinio: -20 } }
+      polemic: { title:"Publicació polèmica", final: "FINAL4", impacte: { seguidors: 1000000, opinio: -10 } },
+      devastador: { title:"Publicació devastadora", final: "FINAL5", impacte: { seguidors: 5000000, opinio: -20 } }
     }
   }
 };
