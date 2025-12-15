@@ -1,5 +1,5 @@
 .c-card-narrador {
-    background-color: white;
+    background-color: #fdfdfd;
     box-shadow: -15px 15px 1px #e8e8e8;
     padding: 20px;
     color: gray;
@@ -7,7 +7,7 @@
     height: fit-content;
 }
 .c-card-publicacio {
-    background-color: white;
+    background-color: #fdfdfd;
     box-shadow: -15px 15px 1px #e8e8e8;
     padding: 20px;
     color: gray;
