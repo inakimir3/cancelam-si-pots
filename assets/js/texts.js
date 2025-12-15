@@ -1,9 +1,21 @@
-export const texts = {
+export const situacions = {
     situacio1_suau: "",
     situacio1_critic: "",
     situacio2a_suau: "",
     situacio2a_critic: "",
     situacio2b_suau: "",
     situacio2b_critic: "",
-    
+    situacio3a_suau: "",
+    situacio3a_critic: "",
+    situacio3b_suau: "",
+    situacio3b_critic: "",
+    situacio3c_critic: "",
+    situacio3c_polemic: "",
+    situacio4a_suau: "",
+    situacio4a_critic: "",
+    situacio4b_suau: "",
+    situacio4b_critic: "",
+    situacio4c_critic: "",
+    situacio4c_polemic: "",
+    situacio4d_
 }
