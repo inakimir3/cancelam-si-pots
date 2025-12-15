@@ -3,69 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
     <title>Cancel·la'm si pots</title>
+    <link rel="icon" type="image/png" href="assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
     <link rel="stylesheet" href="assets/styles/global.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <script src="assets/js/app.js"></script>
-    <main class="font-mono bg-[#EFEFEF] min-h-screen">
-        <section id="menu" class="fixed w-full z-[999] h-screen flex items-center justify-center bg-sky-900">
-            <article class="flex flex-col justify-center items-center gap-10">
-                <h1 class="font-bold text-6xl text-white uppercase">Cancel·la'm si pots</h1>
-                <p class="mt-10 text-white text-center max-w-2xl">
-                    A les xarxes, parlar és fàcil. Ser escoltat és una altra història.
-                    <br> <br>
-                    Ets un usuari anònim. Sense seguidors, sense pressió.
-                    <br> <br>
-                    Però cada tweet que publiquis pot fer créixer la teva veu… o fer-te callar per sempre.
-                    <br><br>
-                </p>
-                <button id="formButton" class="w-fit px-10 cursor-pointer hover:text-sky-900 transition duration-300 hover:bg-white py-4 text-white border-white border-1">REGISTRAR-SE</button>
-            </article>
-        </section>
 
-        <section id="form" class="fixed w-full z-[998] h-screen flex items-center justify-center bg-sky-900">
-            <article class="flex flex-col justify-center items-center gap-10">
-                <h1 class="font-bold text-6xl text-white uppercase">REGISTRE</h1>
-                <input id="userNameInput" type="text" class="border-white border-1 text-gray-400 px-4 py-2 w-full" placeholder="Escriu el teu nom">
-                <button id="playButton" class="w-fit px-10 cursor-pointer hover:text-sky-900 transition duration-300 hover:bg-white py-4 text-white border-white border-1">COMENÇAR</button>
-            </article>
-        </section>
+<main class="font-mono bg-[#EFEFEF] min-h-screen">
 
-        <section id="game" class="grid grid-cols-4 gap-4">
-            <article class="py-10 col-span-3 grid grid-cols-5 gap-10">
-                <div class="col-span-3 col-start-2 c-card">La gent et veu amable. No fas soroll, no tens risc. Encara no hi ha pressió social.</div>
-                <div class="col-span-3 col-start-2 c-card">
-                    <div class="flex gap-4 items-center mb-5 text-[20px]">
-                        <img src="./assets/images/profile.png" class="w-[50px]">
-                        <span id="userNameDisplay">Usuari Anònim</span>
-                    </div>
-                    <div>
-                        Intentant entendre el món el 2025: guerres lluny, crispació a prop i notificacions constants.</div>
-                    </div>
-            </article>
+    <!-- MENU -->
+    <section id="menu" class="fixed w-full z-[999] h-screen flex items-center justify-center bg-sky-900">
+        <article class="flex flex-col justify-center items-center gap-10">
+            <h1 class="font-bold text-6xl text-white uppercase">Cancel·la'm si pots</h1>
+            <p class="mt-10 text-white text-center max-w-2xl">
+                A les xarxes, parlar és fàcil. Ser escoltat és una altra història.
+                <br><br>
+                Ets un usuari anònim. Sense seguidors, sense pressió.
+                <br><br>
+                Però cada tweet que publiquis pot fer créixer la teva veu… o fer-te callar per sempre.
+            </p>
+            <button id="formButton" class="px-10 py-4 hover:text-sky-900 hover:bg-white transition duration-300 cursor-pointer text-white border border-white">
+                REGISTRAR-SE
+            </button>
+        </article>
+    </section>
 
+    <!-- FORM -->
+    <section id="form" class="fixed w-full z-[998] h-screen flex items-center justify-center bg-sky-900">
+        <article class="flex flex-col justify-center items-center gap-10">
+            <h1 class="font-bold text-6xl text-white  uppercase">REGISTRE</h1>
+            <input id="userNameInput" type="text" class="px-4 border-1 border-white text-gray-400 py-2" placeholder="Escriu el teu nom">
+            <button id="playButton" class="px-10 py-4 hover:text-sky-900 hover:bg-white transition duration-300 cursor-pointer text-white border border-white">
+                COMENÇAR
+            </button>
+        </article>
+    </section>
 
+    <!-- GAME -->
+    <section id="game" class="grid grid-cols-4 gap-4">
 
-            <article class="fixed h-full px-20 right-0 col-start-4 bg-sky-900 flex flex-col justify-center items-center text-white gap-10">
-                <div class="uppercase text-gray-400 text-xl flex flex-col gap-2 items-center justify-center">
-                    SEGUIDORS <span id="followersCount" class="text-white text-5xl">0</span>
+        <article class="py-10 col-span-3 grid grid-cols-5 gap-10">
+
+            <div class="col-span-3 col-start-2 c-card-narrador initial-card" id="initialNarrador">
+                Benvingut/da, <span id="userNameDisplayCard">Usuari Anònim</span>! El teu objectiu és guanyar seguidors i ingressos publicant missatges que agradin al públic.
+                <br><br>
+                Però compte! Si publiques missatges que ofenguin massa gent, podries ser cancel·lat/da i perdre-ho tot.
+                <br><br>
+                Fes clic a les opcions de sota per publicar el teu primer missatge.
+            </div>
+
+            <div id="options" class="col-span-3 col-start-2 c-opcions flex gap-4">
+                <div id="option1" class="cursor-pointer">Opció 1</div>
+                <div id="option2" class="cursor-pointer">Opció 2</div>
+            </div>
+
+            <div class="col-span-3 col-start-2 c-card-publicacio initial-card" id="initialPublicacio">
+                <div class="flex gap-4 items-center mb-5 text-[20px]">
+                    <img src="./assets/images/profile.png" class="w-[50px]">
+                    <span id="userNameDisplay">Usuari Anònim</span>
                 </div>
-                <div class="uppercase text-gray-400 text-xl flex flex-col gap-2 items-center justify-center">
-                    INGRESSOS <span id="incomeCount" class="text-white text-5xl">0</span>
+                <div>Publicació</div>
+            </div> 
+        </article>
+
+        <!-- HUD -->
+        <article class="fixed h-full px-20 right-0 bg-sky-900 flex flex-col justify-center items-center text-white gap-10">
+            <div class="text-xl flex flex-col items-center">
+                SEGUIDORS
+                <div id="followersCount" class="text-5xl">0</div>
+            </div>
+            <div class="text-xl flex flex-col items-center">
+                INGRESSOS
+                <div id="incomeCount" class="text-5xl">0</div>
+            </div>
+            <div class="text-xl">
+                OPINIÓ PÚBLICA
+                <div id="meter" class="relative flex flex-col items-center mt-10 w-full">
+                    <img src="./assets/images/meter.svg" >
+                    <img src="./assets/images/needle.svg" id="needle" class="origin-bottom top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute" >
                 </div>
-                <div class="uppercase text-gray-400 text-xl flex flex-col gap-2 items-center justify-center">
-                    OPINIÓ PÚBLICA
-                    <div id="meter" class="relative mt-2">
-                        <img src="./assets/images/meter.svg" alt="">
-                        <img src="./assets/images/needle.svg" class="absolute origin-bottom top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-0" id="needle" alt="">
-                    </div>
-                </div>
-            </article>
-        </section>
-    </main>
+            </div>
+        </article>
+    </section>
+
+</main>
+
+<!-- SCRIPTS -->
+<script src="assets/js/texts.js"></script>
+<script src="assets/js/app.js"></script>
+
 </body>
 </html>

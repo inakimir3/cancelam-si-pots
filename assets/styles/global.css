@@ -1,4 +1,4 @@
-.c-card {
+.c-card-narrador {
     background-color: white;
     box-shadow: -15px 15px 1px #e8e8e8;
     padding: 20px;
@@ -6,3 +6,25 @@
     font-size: 24px;
     height: fit-content;
 }
+.c-card-publicacio {
+    background-color: white;
+    box-shadow: -15px 15px 1px #e8e8e8;
+    padding: 20px;
+    color: gray;
+    font-size: 24px;
+    height: fit-content;
+}
+
+.c-opcions {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #004A71;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.initial-card {
+    display: none;
+}
+
