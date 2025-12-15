@@ -1,0 +1,8 @@
+.c-card {
+    background-color: white;
+    box-shadow: -15px 15px 1px #e8e8e8;
+    padding: 20px;
+    color: gray;
+    font-size: 24px;
+    height: fit-content;
+}

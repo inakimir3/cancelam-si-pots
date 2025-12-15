@@ -3,34 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cancela'm si pots</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
+    <title>Cancel·la'm si pots</title>
+    <link rel="stylesheet" href="assets/styles/global.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <script src="script.js"></script>
+    <script src="assets/js/app.js"></script>
+    <main class="font-mono bg-[#EFEFEF] min-h-screen">
+        <section id="menu" class="fixed w-full z-[999] h-screen flex items-center justify-center bg-sky-900">
+            <article class="flex flex-col justify-center items-center gap-10">
+                <h1 class="font-bold text-6xl text-white uppercase">Cancel·la'm si pots</h1>
+                <p class="mt-10 text-white text-center max-w-2xl">
+                    A les xarxes, parlar és fàcil. Ser escoltat és una altra història.
+                    <br> <br>
+                    Ets un usuari anònim. Sense seguidors, sense pressió.
+                    <br> <br>
+                    Però cada tweet que publiquis pot fer créixer la teva veu… o fer-te callar per sempre.
+                    <br><br>
+                </p>
+                <button id="playButton" class="w-fit px-10 cursor-pointer hover:text-sky-900 transition duration-300 hover:bg-white py-4 text-white border-white border-1">COMENÇAR</button>
+            </article>
+        </section>
 
-    <main>
-        <section class="menu">
-            <h1>Cancela'm si pots</h1>
-            <p>
-                En aquest món digital, cada paraula pot fer-te créixer… o destruir-te.
-                Estàs preparat per descobrir fins on pots arribar abans de ser cancel·lat?
-            </p>
-            <button class="start-button" id="start-button">Començar</button>
+        <section id="game" class="grid grid-cols-4 gap-4">
+            <article class="py-10 col-span-3 grid grid-cols-5 gap-10">
+                <div class="col-span-3 col-start-2 c-card">La gent et veu amable. No fas soroll, no tens risc. Encara no hi ha pressió social.</div>
+                <div class="col-span-3 col-start-2 c-card">
+                    <div class="flex gap-4 items-center mb-5 text-[20px]">
+                        <img src="./assets/images/profile.png" class="w-[50px]">
+                        <span id="userName">User Name</span>
+                    </div>
+                    <div>
+                        Intentant entendre el món el 2025: guerres lluny, crispació a prop i notificacions constants.</div>
+                    </div>
+            </article>
+
+
+
+            <article class="fixed h-full px-20 right-0 col-start-4 bg-sky-900 flex flex-col justify-center items-center text-white gap-10">
+                <div class="uppercase text-gray-400 text-xl flex flex-col gap-2 items-center justify-center">
+                    SEGUIDORS <span id="followersCount" class="text-white text-5xl">0</span>
+                </div>
+                <div class="uppercase text-gray-400 text-xl flex flex-col gap-2 items-center justify-center">
+                    INGRESSOS <span id="incomeCount" class="text-white text-5xl">0</span>
+                </div>
+                <div class="uppercase text-gray-400 text-xl flex flex-col gap-2 items-center justify-center">
+                    OPINIÓ PÚBLICA
+                    <div id="meter" class="relative mt-2">
+                        <img src="./assets/images/meter.svg" alt="">
+                        <img src="./assets/images/needle.svg" class="absolute origin-bottom top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-0" id="needle" alt="">
+                    </div>
+                </div>
+            </article>
         </section>
-        <section class="container post-container"> </section>
-        <section class="container stats-container"> 
-            <h2 class="title">Estadístiques</h2>
-            <div>
-                <p>👥 Seguidors: 1000</p>
-                <p>⭐ Reputació: 200</p>
-                <p>💬 Hate: 0</p>
-                <p>💰 Ingressos: 50</p>
-            </div>
-        </section>
-        <section class="container brands-container"> </section>
-        <section class="container text-container"> </section>
     </main>
 </body>
 </html>
