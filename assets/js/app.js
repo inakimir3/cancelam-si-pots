@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const clickSound = new Audio('./assets/music/click.wav');
+    clickSound.volume = 1; // ajusta si quieres
+
     // MENU / FORM
     const formButton = document.getElementById('formButton');
     const playButton = document.getElementById('playButton');
@@ -9,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const userNameInput = document.getElementById('userNameInput');
     const userNameDisplay = document.getElementById('userNameDisplay');
 
-    formButton.onclick = () => menuSection.style.display = 'none';
+    formButton.onclick = () => {
+        playClick();
+        menuSection.style.display = 'none';
+    };
+
 
     // HUD
     const seguidorsDisplay = document.getElementById('followersCount');
@@ -28,6 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let seguidors = 0;
     let ingressos = 0;
     let opinioPublica = 50;
+
+    function playClick() {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    }
+
 
     function formatNumber(value) {
         if (value >= 1000000) {
@@ -112,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function chooseOption(type) {
+        playClick();
         const situation = situacions[currentSituation];
         const selected = situation.opcions[type];
 
@@ -129,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     playButton.onclick = () => {
+        playClick();
         const name = userNameInput.value.trim();
         if (name) {
             userNameDisplay.textContent = name;
@@ -138,6 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
         formSection.style.display = 'none';
         renderSituation("1"); // Comença el joc
     };
+
+
+
 
     setInterval(updateUI, 100);
 });
