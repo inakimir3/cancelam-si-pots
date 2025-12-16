@@ -1,6 +1,6 @@
 const situacions = {
   "1": {
-    narrador: "Benvingut/da! El teu objectiu és guanyar seguidors i ingressos publicant missatges que agradin al públic. Però compte! Si publiques missatges que ofenguin massa gent, podries ser cancel·lat/da i perdre-ho tot. Fes clic a les opcions de sota per publicar el teu primer missatge.",
+    narrador: "A les xarxes, parlar és fàcil. El difícil és suportar les conseqüències. Comences sent invisible, però cada publicació construeix una imatge pública. No importa tant el que dius, sinó com es llegeix, qui ho comparteix i en quin moment. La teva veu pot créixer… o quedar atrapada en el soroll.",
     impacte: { seguidors: 0, opinio: 0 },
     opcions: {
       suau: { title:"Publicació suau", next: "2A", text: "Tothom té la seva opinió, que ha de ser respectada. Visca la llibertat d’expressió!!", impacte: { seguidors: 2000, opinio: 2 } },
@@ -192,9 +192,9 @@ const situacions = {
 
 
 const finals = {
-  FINAL1: "Has estat coherent i respectat.",
-  FINAL2: "Has fet soroll però tens un públic fort.",
-  FINAL3: "Has caigut a l’espiral del silenci.",
-  FINAL4: "Mini pànic mediàtic. Encara tens opcions.",
-  FINAL5: "Pànic mediàtic complet. Ningú et defensa."
+  FINAL1: "No has estat cancel·lat, però tampoc has influït. El teu discurs mai ha sortit del marc del que és acceptable, i per això no ha generat ni rebuig ni adhesió real. A les xarxes, el consens protegeix, però també dilueix. No has entrat a l’espiral del silenci perquè mai has amenaçat el relat dominant.",
+  FINAL2: "Has generat debat sense perdre completament el suport. Encara hi ha gent disposada a defensar-te públicament, perquè el cost social de fer-ho no és excessiu. La cancel·lació no s’activa quan hi ha desacord, sinó quan el desacord es percep com a perillós. De moment, encara ets dins del joc.",
+  FINAL3: "La teva opinió no ha desaparegut: ha quedat sola. Moltes persones podrien estar d’acord amb tu, però han deixat de dir-ho en veu alta. No per convicció, sinó per por a l’aïllament social. Així funciona l’espiral del silenci: el silenci no indica absència d’opinió, sinó absència de seguretat.",
+  FINAL4: "El conflicte ha superat el contingut del teu missatge. La indignació col·lectiva s’ha accelerat, els matisos s’han perdut i la teva figura s’ha convertit en un símbol. No importa què volies dir, sinó què representa el teu cas per a la resta. Això no és només cancel·lació: és un pànic moral en temps real.",
+  FINAL5: "La xarxa ha decidit que ja no mereixes ser escoltat. Els teus missatges es llegeixen com a proves, no com a opinions. El silenci dels altres no és neutral: és una estratègia de supervivència. Quan la cancel·lació és completa, la comunitat no et rebutja: simplement actua com si no existissis."
 };
