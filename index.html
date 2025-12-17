@@ -34,8 +34,9 @@
     <!-- FORM -->
     <section id="form" class="fixed w-full z-[998] h-screen flex items-center justify-center bg-sky-900">
         <article class="flex flex-col justify-center items-center gap-10">
-            <h1 class="font-bold text-6xl text-white  uppercase">REGISTRE</h1>
-            <input id="userNameInput" type="text" class="px-4 border-1 border-white text-gray-400 py-2" placeholder="Escriu el teu nom">
+            <h1 class="font-bold text-4xl text-white uppercase">Benvingut/da a la xarxa</h1>
+            <p class="text-white text-lg">Escriu el teu nom per començar a jugar.</p>
+            <input id="userNameInput" type="text" class="px-4 border-1 border-white text-gray-400 py-2" placeholder="Usuari Anònim">
             <button id="playButton" class="px-10 py-4 hover:text-sky-900 hover:bg-white transition duration-300 cursor-pointer text-white border border-white">
                 COMENÇAR
             </button>
@@ -47,12 +48,10 @@
 
         <article class="py-10 col-span-3 grid grid-cols-5 gap-10">
 
-            <div class="col-span-3 col-start-2 c-card-narrador initial-card" id="initialNarrador">
+            <div class="col-span-3 col-start-2 c-card-narrador iniial-card" id="initialarrador">
                 Benvingut/da, <span id="userNameDisplayCard">Usuari Anònim</span>! El teu objectiu és guanyar seguidors i ingressos publicant missatges que agradin al públic.
                 <br><br>
                 Però compte! Si publiques missatges que ofenguin massa gent, podries ser cancel·lat/da i perdre-ho tot.
-                <br><br>
-                Fes clic a les opcions de sota per publicar el teu primer missatge.
             </div>
 
             <div id="options" class="col-span-3 col-start-2 c-opcions flex gap-4">
