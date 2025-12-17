@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const clickSound = new Audio('./assets/music/click.wav');
-    clickSound.volume = 1; // ajusta si quieres
+    clickSound.volume = 1;
 
-    // MENU / FORM
     const formButton = document.getElementById('formButton');
     const playButton = document.getElementById('playButton');
     const menuSection = document.getElementById('menu');
@@ -18,19 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    // HUD
     const seguidorsDisplay = document.getElementById('followersCount');
     const ingressosDisplay = document.getElementById('incomeCount');
     const needle = document.getElementById('needle');
 
-    // GAME UI
     const option1Btn = document.getElementById('option1');
     const option2Btn = document.getElementById('option2');
     const optionsContainer = document.getElementById('options');
 
     const gameContainer = document.querySelector('#game article:nth-child(1)');
 
-    // GAME STATE
     let currentSituation = "1";
     let seguidors = 0;
     let ingressos = 0;
@@ -69,11 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
         card.className = "col-span-3 col-start-2 c-card-narrador mt-4";
         card.textContent = text;
 
-        // Afegir abans dels botons d'opció
         gameContainer.appendChild(card);
-        gameContainer.appendChild(optionsContainer); // mou els botons després del narrador
+        gameContainer.appendChild(optionsContainer);
 
-        // Scroll
         card.scrollIntoView({ behavior: 'smooth', block: 'end' });
         optionsContainer.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
@@ -86,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="./assets/images/profile.png" class="w-[50px]">
                 <span>${userNameDisplay.textContent}</span>
             </div>
-            <div>${text}</div>
-        `;
+            <div>${text}</div>`;
+
         gameContainer.appendChild(card);
         card.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
@@ -102,17 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Mostrar narrador
         addNarradorCard(situation.narrador);
 
-        // Actualitzar HUD
         if (situation.impacte) {
             seguidors += situation.impacte.seguidors || 0;
             opinioPublica += situation.impacte.opinio || 0;
             opinioPublica = Math.max(0, Math.min(100, opinioPublica));
         }
 
-        // Configurar opcions
         const keys = Object.keys(situation.opcions);
         option1Btn.textContent = situation.opcions[keys[0]].title;
         option2Btn.textContent = situation.opcions[keys[1]].title;
@@ -120,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
         option1Btn.onclick = () => chooseOption(keys[0]);
         option2Btn.onclick = () => chooseOption(keys[1]);
 
-        // Mostrar botons
         optionsContainer.style.display = 'flex';
     }
 
@@ -129,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const situation = situacions[currentSituation];
         const selected = situation.opcions[type];
 
-        // Crear publicació
         addPublicationCard(selected.text || "");
 
         if (selected.next) {
@@ -151,11 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         formSection.style.display = 'none';
-        renderSituation("1"); // Comença el joc
+
+        renderSituation("1"); 
     };
-
-
-
 
     setInterval(updateUI, 100);
 });
