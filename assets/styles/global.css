@@ -1,31 +1,91 @@
+/* Mantenim els teus estils base i afegim/modifiquem les cards */
+
 .c-card-narrador {
     background-color: #fdfdfd;
-    box-shadow: -15px 15px 1px #e8e8e8;
-    padding: 20px;
-    color: gray;
-    font-size: 24px;
+    box-shadow: -10px 10px 0px #004A71; /* Canviat a blau per contrast acadèmic */
+    padding: 25px;
+    color: #444;
+    font-size: 20px;
+    line-height: 1.6;
     height: fit-content;
-    
+    border: 1px solid #ddd;
 }
+
 .c-card-publicacio {
-    background-color: #fdfdfd;
-    box-shadow: -15px 15px 1px #e8e8e8;
+    background-color: #ffffff;
+    box-shadow: -8px 8px 0px #e8e8e8;
     padding: 20px;
-    color: gray;
-    font-size: 24px;
-    height: fit-content;
+    color: #111;
+    font-size: 18px;
+    border: 1px solid #eee;
+    max-width: 600px;
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.tweet-pfp {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: 2px solid #004A71;
+}
+
+.tweet-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tweet-name {
+    font-weight: bold;
+    color: #000;
+}
+
+.tweet-handle {
+    color: #666;
+    font-size: 14px;
+}
+
+.tweet-content {
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.tweet-date {
+    color: #666;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.tweet-metrics {
+    display: flex;
+    gap: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.metric-item b {
+    color: #000;
 }
 
 .c-opcions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 30px;
     font-weight: bold;
     color: #004A71;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    padding-left: 10%;
 }
 
 .initial-card {
     display: none;
 }
-
