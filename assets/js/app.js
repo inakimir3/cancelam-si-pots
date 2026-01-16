@@ -1,3 +1,5 @@
+// app.js
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- ÀUDIO ---
@@ -17,11 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const seguidorsDisplay = document.getElementById('followersCount');
     const ingressosDisplay = document.getElementById('incomeCount');
     const needle = document.getElementById('needle');
+    const opinionText = document.getElementById('opinionText');
 
     const option1Btn = document.getElementById('option1');
     const option2Btn = document.getElementById('option2');
     const optionsContainer = document.getElementById('options');
 
+    const hudIndicators = document.getElementById('hudIndicators');
     const gameContainer = document.querySelector('#game article:nth-child(1)');
 
     // --- VARIABLES D'ESTAT ---
@@ -48,12 +52,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return value;
     }
 
+    function showIndicator(text, type = "positive") {
+        const indicator = document.createElement('div');
+        indicator.className = `hud-indicator ${type}`;
+        indicator.textContent = text;
+        hudIndicators.appendChild(indicator);
+        setTimeout(() => indicator.remove(), 1600);
+    }
+
     function updateUI() {
         seguidorsDisplay.textContent = formatNumber(seguidors);
         ingressosDisplay.textContent = formatNumber(ingressos);
+
         const angle = (opinioPublica / 100) * 180 - 90;
         needle.style.transform = `rotate(${angle}deg)`;
-        
+
+        if (opinioPublica > 70) {
+            opinionText.textContent = "El públic t'adora 🔥";
+            opinionText.style.color = "#6ee7b7";
+        } else if (opinioPublica > 40) {
+            opinionText.textContent = "Opinió dividida 🤔";
+            opinionText.style.color = "#fde68a";
+        } else {
+            opinionText.textContent = "En risc de cancel·lació ⚠️";
+            opinionText.style.color = "#fca5a5";
+        }
     }
 
     // --- COMPONENTS VISUALS ---
@@ -69,9 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addPublicationCard(text) {
         const now = new Date();
         const timeStr = now.getHours() + ":" + now.getMinutes().toString().padStart(2, '0');
-        const dateStr = now.getDate() + " de gen. de 2026";
-        
-        // Simulem mètriques basades en seguidors reals per donar realisme
+
         const likes = formatNumber(Math.floor(seguidors * 0.08) + Math.floor(Math.random() * 50));
         const rts = formatNumber(Math.floor(seguidors * 0.02) + Math.floor(Math.random() * 10));
 
@@ -91,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="metric-item"><b>${likes}</b> M'agrada</span>
             </div>
         `;
-
         gameContainer.appendChild(card);
         card.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
@@ -121,10 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addNarradorCard(situation.narrador);
 
         if (situation.impacte) {
-            seguidors += situation.impacte.seguidors || 0;
-            opinioPublica += situation.impacte.opinio || 0;
-            ingressos += situation.impacte.ingressos || 0;
-            opinioPublica = Math.max(0, Math.min(100, opinioPublica));
+            applyImpact(situation.impacte);
         }
 
         const keys = Object.keys(situation.opcions);
@@ -138,6 +155,25 @@ document.addEventListener('DOMContentLoaded', () => {
         optionsContainer.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
 
+    function applyImpact(impact) {
+        if (impact.seguidors) {
+            const val = impact.seguidors;
+            seguidors += val;
+            showIndicator(`${val > 0 ? '+' : ''}${formatNumber(val)} seguidors`, val > 0 ? "positive" : "negative");
+        }
+        if (impact.ingressos) {
+            const val = impact.ingressos;
+            ingressos += val;
+            showIndicator(`${val > 0 ? '+' : ''}${formatNumber(val)} €`, val > 0 ? "positive" : "negative");
+        }
+        if (impact.opinio) {
+            const val = impact.opinio;
+            opinioPublica += val;
+            opinioPublica = Math.max(0, Math.min(100, opinioPublica));
+            showIndicator(`${val > 0 ? '+' : ''}${val} opinió`, val > 0 ? "positive" : "negative");
+        }
+    }
+
     function chooseOption(type) {
         playClick();
         const situation = situacions[currentSituation];
@@ -146,12 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         optionsContainer.style.display = 'none';
         addPublicationCard(selected.text || "");
 
-        if (selected.impacte) {
-            seguidors += selected.impacte.seguidors || 0;
-            opinioPublica += selected.impacte.opinio || 0;
-            ingressos += selected.impacte.ingressos || 0;
-            opinioPublica = Math.max(0, Math.min(100, opinioPublica));
-        }
+        if (selected.impacte) applyImpact(selected.impacte);
 
         setTimeout(() => {
             if (selected.final) {
@@ -163,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 800);
     }
 
+    // --- EVENTS ---
     formButton.onclick = () => {
         playClick();
         menuSection.style.display = 'none';
@@ -175,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         userNameDisplayCard.textContent = name;
         formSection.style.display = 'none';
         document.querySelectorAll('.initial-card').forEach(el => el.style.display = 'none');
-        renderSituation("1"); 
+        renderSituation("1");
     };
 
     setInterval(updateUI, 100);

@@ -89,3 +89,54 @@
 .initial-card {
     display: none;
 }
+
+.hud-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.hud-label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #9ddcff;
+}
+
+.hud-value {
+    font-size: 48px;
+    font-weight: 800;
+    margin-top: 5px;
+}
+
+.hud-indicator {
+    font-size: 16px;
+    font-weight: bold;
+    animation: floatUp 1.6s ease-out forwards;
+}
+
+.hud-indicator.positive {
+    color: #6ee7b7; /* verd */
+}
+
+.hud-indicator.negative {
+    color: #fca5a5; /* vermell */
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
